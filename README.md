@@ -1,5 +1,4 @@
 # ansible-config-mgt
 
-for project 10
-
-Not building automatically
+its a new day
+opened port 80
