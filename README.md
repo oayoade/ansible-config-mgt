@@ -2,4 +2,4 @@
 
 new day
 :8080
-full name
+full name:8080
