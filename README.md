@@ -1,13 +1,3 @@
 # ansible-config-mgt
 
-for project 10
-
-Not building automatically
-
-noooppeee
-
-stryingggggg
-
-//
-
-another with creds
+new day
