@@ -1,3 +1,6 @@
+
+
+
 ---
 - name: update web, nfs and db servers
   hosts: webservers, nfs
