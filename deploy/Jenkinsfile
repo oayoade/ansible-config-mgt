@@ -1,45 +1,16 @@
-pipeline {
-    agent any
-
-
-  stages {
-    stage('Build') {
-      steps {
-        script {
-          sh 'echo "Building Stage"'
-        }
-      }
-
-    }
-     stage('Test') {
-      steps {
-        script {
-          sh 'echo "Testing Stage"'
-        }
-      }
-     }
-     stage('Package') {
-         steps {
-             script{
-                 sh 'echo "Packaging Stage"'
+pipeline{
+     agent any
+     stages{
+         stage('SCM Checkout'){
+             steps{
+                 git 'https://github.com/oayoade/ansible-config-mgt.git'
+             }
+         }
+         stage('Execute Ansible'){
+             steps{
+                 ansiblePlaybook credentialsId: 'd29c4443-0f41-4a5b-924b-6d0c9bb49b40', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'dev.yml', playbook: 'site.yml'
              }
          }
      }
-     stage ('Deploy') {
-         steps {
-             script {
-                 sh 'echo "Deployment stage"'
-             }
-         }
-     }
-     stage ('Clean up'){
-         steps {
-             script{
-                 sh 'echo "Cleaning up"'
-             }
-         }
-     }
-    }
 }
-
 
